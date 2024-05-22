@@ -19,7 +19,7 @@ const Home = () => {
       }
       if (data) {
         setNotes(data);
-        setFetchError(null);
+        setFetchError(null);   
       }
     };
     fetchNotes();

@@ -1,13 +1,13 @@
 import { useState } from "react";
 import supabase from "../config/supabaseClient";
-import { Navigate, useNavigate} from "react-router-dom";
+import { navigate, useNavigate} from "react-router-dom";
 
 const Create = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [prioritylevel, setPriorityLevel] = useState("");
   const [formError, setFormError] = useState(null);
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,7 +30,7 @@ const Create = () => {
   if (data) {
     console.log("Supabase Data:", data);
     setFormError(null);
-    Navigate('/')
+    navigate('/')
    }
 
  };
@@ -38,6 +38,7 @@ const Create = () => {
   return (
     <div className="page create">
       <form onSubmit={handleSubmit}>
+      <div style={{fontWeight:"bold", textAlign: "center"}}>Create Note</div>
         <label htmlFor="title"> Title: </label>
         <input
           type="text"
