@@ -105,15 +105,19 @@ form button {
   font-family: "Poppins";
   cursor: pointer;
 }
-.notification {
-  position: fixed;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: green;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 9999;
+
+/* custom-toastify.css */
+
+/* General styles for all toast notifications */
+.Toastify__progress-bar {
+  background: var(--primary); /* Default primary color */
+}
+
+/* Specific styles for different types of notifications */
+.custom-toast-create .Toastify__progress-bar {
+  background: green; /* Green for create notifications */
+}
+
+.custom-toast-update .Toastify__progress-bar {
+  background: goldenrod; /* goldenrod for update notifications */
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import supabase from "../config/supabaseClient";
-import {NotesCard} from "../components/NotesCard"
+import { NotesCard } from "../components/NotesCard";
 
 const Home = () => {
   const [fetchError, setFetchError] = useState(null);
@@ -19,7 +19,7 @@ const Home = () => {
       }
       if (data) {
         setNotes(data);
-        setFetchError(null);   
+        setFetchError(null);
       }
     };
     fetchNotes();
@@ -29,11 +29,11 @@ const Home = () => {
       {fetchError && <p>{fetchError}</p>}
       {notes && (
         <div className="notes">
-        <div className="note-grid">
-        {notes.map((note) => (
-            <NotesCard key ={note.id} note ={note}/>
-          ))}
-        </div>
+          <div className="note-grid">
+            {notes.map((note) => (
+              <NotesCard key={note.id} note={note} />
+            ))}
+          </div>
         </div>
       )}
     </div>

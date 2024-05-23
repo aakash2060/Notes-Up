@@ -2,10 +2,10 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import supabase from "../config/supabaseClient";
 import { useNavigate } from "react-router-dom";
+import { FaCheckCircle } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Update = () => {
-  const notify = () => toast("Wow so easy!");
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -13,6 +13,20 @@ const Update = () => {
   const [description, setDescription] = useState("");
   const [prioritylevel, setPriorityLevel] = useState("");
   const [formError, setFormError] = useState(null);
+
+  const notify = () => {
+    toast(
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <FaCheckCircle style={{ color: "gold", marginRight: "8px" }} />
+        Note was updated!
+      </div>,
+      {
+        className: "custom-toast-update",
+        bodyClassName: "custom-toast-body",
+        progressClassName: "custom-toast-progress",
+      }
+    );
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,8 +46,10 @@ const Update = () => {
     } else if (data) {
       console.log(data);
       setFormError(null);
-
-      navigate("/");
+      notify();
+      setTimeout(() => {
+        navigate("/");
+      }, 1000); // Navigate after 3 seconds
     }
   };
   useEffect(() => {
@@ -84,9 +100,10 @@ const Update = () => {
           value={prioritylevel}
           onChange={(e) => setPriorityLevel(e.target.value)}
         />
-        <button onClick={notify}>Update</button>
+        <button type="submit">Update</button>
         {formError && <p className="error">{formError}</p>}
       </form>
+      <ToastContainer className="custom-toast-container" />
     </div>
   );
 };
