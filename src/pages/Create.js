@@ -50,7 +50,7 @@ const Create = () => {
       notify();
       setTimeout(() => {
         navigate("/");
-      }, 1000); // Navigate after 3 seconds
+      }, 2000); // Navigate after 2 seconds
     }
   };
 

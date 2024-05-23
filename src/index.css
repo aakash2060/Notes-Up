@@ -119,5 +119,8 @@ form button {
 }
 
 .custom-toast-update .Toastify__progress-bar {
-  background: goldenrod; /* goldenrod for update notifications */
+  background: gold; /* goldenrod for update notifications */
+}
+.custom-toast-delete .Toastify__progress-bar {
+  background: red; /* goldenrod for update notifications */
 }

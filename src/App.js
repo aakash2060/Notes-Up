@@ -4,7 +4,8 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import Home from "./pages/Home"
 import Create from "./pages/Create"
 import Update from "./pages/Update"
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Link to="/">Home</Link>
         <Link to="/create">Create a New Note</Link>
       </nav>
+      <ToastContainer />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/create" element={<Create />} />
