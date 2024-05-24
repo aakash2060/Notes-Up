@@ -1,19 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
 
 :root {
-  --primary: #3B82F6; /* Rich blue */
-  --secondary: #7C3AED; /* Vibrant purple */
+  --primary-light: #3B82F6; /* Rich blue */
+  --secondary-light: #7C3AED; /* Vibrant purple */
+  --background-light: #f2f2f2;
+  --text-light: #333;
+
+  --primary-dark: #1b1f23; /* Dark mode primary color */
+  --secondary-dark: #7C3AED; /* Dark mode secondary color */
+  --background-dark: lightgrey;
+  --text-dark: #f2f2f2;
 }
+.app.light {
+  --primary: var(--primary-light);
+  --secondary: var(--secondary-light);
+  --background: var(--background-light);
+  --text: var(--text-light);
+}
+
+.app.dark {
+  --primary: var(--primary-dark);
+  --secondary: var(--secondary-dark);
+  --background: var(--background-dark); /* Use dark mode background color */
+  --text: var(--text-light);
+}
+
 h1,h2,h3 {
   margin: 0;
 }
 
 body {
   margin: 0;
-  color: #333;
+  color: var(--text);
   font-family: 'Poppins';
-  background: #f2f2f2;
+  background: var(--background);   /* Use light mode background color */
 }
+
+body, .app {
+  flex: 1;
+  background: var(--background);   /* Use light mode background color */
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+}
+
 
 nav {
   background: var(--primary);
@@ -42,6 +72,7 @@ nav h1 {
   color: #fff;
   font-size: 1.5em;
   margin-right: 20px; /* Adjust spacing between title and links */
+  gap: 10px;
 }
 .page {
   max-width: 1200px;
@@ -54,10 +85,10 @@ nav h1 {
   margin-top: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+  gap: 30px;
 }
 .note-card {
-  width: 100%;
+  width:100%;
   padding: 1rem;
   background: #fff;
   box-sizing: border-box;
@@ -70,8 +101,8 @@ nav h1 {
 }
 .prioritylevel {
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: -25px;
+  right: -20px;
   background: var(--secondary);
   color: #fff;
   border-radius: 6px;
@@ -127,7 +158,10 @@ form button {
 }
 
 /* custom-toastify.css */
+.custom-toast-container{
+  margin-top: 50px;
 
+}
 /* General styles for all toast notifications */
 .Toastify__progress-bar {
   background: var(--primary); /* Default primary color */

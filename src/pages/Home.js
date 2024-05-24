@@ -5,7 +5,7 @@ import { NotesCard } from "../components/NotesCard";
 const Home = () => {
   const [fetchError, setFetchError] = useState(null);
   const [notes, setNotes] = useState(null);
-  const [orderBy, setOrderBy] = useState("created_at");
+  const [orderBy, setOrderBy] = useState("prioritylevel");
 
   //Updates the local state after deletion
   const handleDelete = (id) => {
@@ -46,7 +46,7 @@ const Home = () => {
           <div className="order-by">
             {" "}
             {/* we're just creating a button with for sorting notes based on time created and priority level */}
-            <p>Order Notes: </p>
+            <p>Order by: </p>
             <button onClick={() => setOrderBy("created_at")}>
               Time Created
             </button>
