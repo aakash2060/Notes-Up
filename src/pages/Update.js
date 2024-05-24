@@ -100,7 +100,7 @@ const Update = () => {
           value={prioritylevel}
           onChange={(e) => setPriorityLevel(e.target.value)}
         />
-        <button type="submit">Update</button>
+        <button type="submit" className="update-button">Update</button>
         {formError && <p className="error">{formError}</p>}
       </form>
       <ToastContainer className="custom-toast-container" />
