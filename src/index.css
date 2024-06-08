@@ -263,3 +263,57 @@ form button {
 .create-button:active {
   transform: scale(0.95);
 }
+
+/* Media Queries for Mobile Devices */
+@media screen and (max-width: 480px) {
+  .note-grid {
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 20px; /* Smaller gap */
+  }
+
+  .note-card {
+    padding: 0.5rem; /* Reduce padding */
+    border-radius: 4px; /* Smaller border radius */
+    min-height: 120px; /* Reduce minimum height */
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a {
+    margin: 5px 0; /* Stack links vertically */
+  }
+
+  nav h1 {
+    margin-bottom: 10px; /* Add margin below title */
+  }
+}
+
+/* Media Queries for Tablets */
+@media screen and (max-width: 768px) {
+  .note-grid {
+    grid-template-columns: 1fr 1fr; /* Two-column layout */
+    gap: 25px; /* Adjust gap */
+  }
+
+  .note-card {
+    padding: 0.75rem; /* Slightly reduce padding */
+    border-radius: 5px; /* Slightly reduce border radius */
+    min-height: 130px; /* Slightly reduce minimum height */
+  }
+
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap; /* Wrap links to new lines if needed */
+  }
+
+  nav a {
+    margin: 5px 10px; /* Adjust margin for wrapped links */
+  }
+
+  .page {
+    padding: 15px; /* Reduce page padding */
+  }
+}
