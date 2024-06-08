@@ -44,6 +44,19 @@ body, .app {
   flex-direction: column;
 }
 
+.nav-container {
+  display: flex;
+  align-items: center;
+}
+
+.notesup {
+  display: flex;
+  align-items: center;
+}
+
+.notesup h1 {
+  margin-right: 10px; /* Adjust spacing between title and button */
+}
 
 nav {
   background: var(--primary);
@@ -74,19 +87,20 @@ nav h1 {
   margin-right: 20px; /* Adjust spacing between title and links */
   gap: 10px;
 }
+
 .page {
   max-width: 1200px;
-  margin: 20px auto;
+  margin: 2% 20%;
   padding: 20px;
 }
-
 
 .note-grid {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr ;
   gap: 30px;
 }
+
 .note-card {
   width:100%;
   padding: 1rem;
@@ -137,15 +151,18 @@ form {
   padding: 20px;
   max-width: 480px;
   margin: 0 auto;
-  border-radius: 6px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px;
+  width:100%
 }
 form input, form textarea {
   display: block;
   width: 100%;
-  padding: 6px;
+  padding: 8px;
   box-sizing: border-box;
   border: 1px solid #ccc;
   margin: 10px 0 20px 0;
+  border-radius: 4px;
 }
 form button {
   background: var(--primary);
@@ -155,6 +172,7 @@ form button {
   padding: 6px 8px;
   font-family: "Poppins";
   cursor: pointer;
+  width:100%;
 }
 
 /* custom-toastify.css */
@@ -264,35 +282,15 @@ form button {
   transform: scale(0.95);
 }
 
-/* Media Queries for Mobile Devices */
-@media screen and (max-width: 480px) {
-  .note-grid {
-    grid-template-columns: 1fr; /* Single column layout */
-    gap: 20px; /* Smaller gap */
-  }
-
-  .note-card {
-    padding: 0.5rem; /* Reduce padding */
-    border-radius: 4px; /* Smaller border radius */
-    min-height: 120px; /* Reduce minimum height */
-  }
-
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav a {
-    margin: 5px 0; /* Stack links vertically */
-  }
-
-  nav h1 {
-    margin-bottom: 10px; /* Add margin below title */
-  }
-}
 
 /* Media Queries for Tablets */
 @media screen and (max-width: 768px) {
+  .nav-right {
+    margin-left: auto;
+  }
+  .notesup h1 {
+    margin-right: 300px; /* Adjust spacing between title and button */
+  }
   .note-grid {
     grid-template-columns: 1fr 1fr; /* Two-column layout */
     gap: 25px; /* Adjust gap */
@@ -310,10 +308,49 @@ form button {
   }
 
   nav a {
-    margin: 5px 10px; /* Adjust margin for wrapped links */
+    margin: 0; /* Adjust margin for wrapped links */
   }
 
   .page {
     padding: 15px; /* Reduce page padding */
   }
+}
+
+  
+/* Media Queries for Mobile Devices */
+@media screen and (max-width: 480px) {
+  .page {
+    max-width: 1200px;
+    margin: 0px;
+    padding:30px;
+  }
+  
+  .notesup h1 {
+    margin-right: 200px; /* Adjust spacing between title and button */
+  }
+  .note-grid {
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 30px; /* Smaller gap */
+  }
+
+  .note-card {
+    padding: 1rem; /* Reduce padding */
+    border-radius: 4px; /* Smaller border radius */
+    min-height: 120px; /* Reduce minimum height */
+    width: 96%;
+  }
+
+  nav {
+   
+    align-items: flex-start;
+  }
+
+  nav a {
+    margin:  0; /* Stack links vertically */
+  }
+
+  nav h1 {
+    margin-bottom: 10px; /* Add margin below title */
+  }
+
 }

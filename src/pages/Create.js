@@ -41,11 +41,11 @@ const Create = () => {
       .select();
 
     if (error) {
-      console.log("Supabase Error:", error);
+      console.log(" Error:", error);
       setFormError("Please fill all the fields");
     }
     if (data) {
-      console.log("Supabase Data:", data);
+      console.log(" Data:", data);
       setFormError(null);
       notify();
       setTimeout(() => {

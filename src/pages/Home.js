@@ -46,7 +46,7 @@ const Home = () => {
           <div className="order-by">
             {" "}
             {/* we're just creating a button with for sorting notes based on time created and priority level */}
-            <p>Order by: </p>
+          
             <button onClick={() => setOrderBy("created_at")}>
               Time Created
             </button>
