@@ -11,7 +11,7 @@ const Create = () => {
   const [prioritylevel, setPriorityLevel] = useState("");
   const [formError, setFormError] = useState(null);
   const navigate = useNavigate();
- 
+
   const notify = () => {
     toast(
       <div style={{ display: "flex", alignItems: "center" }}>
@@ -31,6 +31,11 @@ const Create = () => {
 
     if (!title || !description || !prioritylevel) {
       setFormError("Please fill all the fields");
+      return;
+    }
+
+    if (prioritylevel < 0 || prioritylevel > 10) {
+      setFormError("Priority level must be between 0 and 10");
       return;
     }
 
@@ -81,7 +86,16 @@ const Create = () => {
           type="number"
           id="prioritylevel"
           value={prioritylevel}
-          onChange={(e) => setPriorityLevel(e.target.value)}
+          min="0"
+          max="10"
+          onChange={(e) => {
+            const value = parseInt(e.target.value, 10);
+            if (value >= 0 && value <= 10) {
+              setPriorityLevel(value);
+            } else if (e.target.value === "") {
+              setPriorityLevel("");
+            }
+          }}
         />
         <button className="create-button">Create</button>
         {formError && <p className="error">{formError}</p>}
