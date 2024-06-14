@@ -8,6 +8,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useContext } from "react";
 import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
 function App() {
   const {theme, toggleTheme} = useContext(ThemeContext);
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/create" element={<Create />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/:id" element={<Update />} />
       </Routes>
     </BrowserRouter>

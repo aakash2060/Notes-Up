@@ -16,6 +16,7 @@
   --secondary: var(--secondary-light);
   --background: var(--background-light);
   --text: var(--text-light);
+
 }
 
 .app.dark {
@@ -314,6 +315,9 @@ form button {
   .page {
     padding: 15px; /* Reduce page padding */
   }
+  .custom-toast-container {
+    max-width: 300px; /* Adjust for smaller screens */
+  }
 }
 
   
@@ -351,6 +355,10 @@ form button {
 
   nav h1 {
     margin-bottom: 10px; /* Add margin below title */
+  }
+  .custom-toast-container {
+    max-width: 250px; /* Adjust for mobile screens */
+    font-size: 12px; /* Adjust font size */
   }
 
 }
